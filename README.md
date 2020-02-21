@@ -9,7 +9,7 @@ Arquivo para ser executado: main.py
 ```
 
 ### Exemplo
-```python
+```python3
 Quantidade de Vértices> 2
 Adjacência (v0v0)(0>não|1>sim):1
 Adjacência (v0v1)(0>não|1>sim):1
