@@ -3,5 +3,7 @@
 
 ### Aluno: João Vítor Silva Ferreira
 Linguagem: python3
+
 Representação do Grafo: Matriz de Adjacência
+
 Arquivo para ser executado: main.py
