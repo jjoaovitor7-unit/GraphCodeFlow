@@ -1,5 +1,7 @@
 # GraphCodeFlow
 > Atividade de Implementação da Disciplina **Teoria dos Grafos 2020.1**
+<br />![](https://badgen.net/github/last-commit/jjoaovitor7-unit/GraphCodeFlow)
+![](https://badgen.net/github/license/jjoaovitor7-unit/GraphCodeFlow)
 ### Aluno> João Vítor Silva Ferreira
 
 ```
