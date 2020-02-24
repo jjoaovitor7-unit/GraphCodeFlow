@@ -35,6 +35,7 @@ def main():
               +"\n2-Principais Grafos de Coloração (Extra)"
               +"\n3-Printar Grafo"
               +"\n4-Verificar se o Grafo é completo"
+              +"\n5-Remover Aresta"
               +"\n99-Parar o Programa"
               +"\n: "))
 
@@ -73,6 +74,12 @@ def main():
                 ehCompleto(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
+
+        elif opcao == 5:
+            a1, a2 = input("Aresta(xx xx): ").split()
+            a1 = int(a1)
+            a2 = int(a2)
+            adjMATRIZ[a1][a2] = 0
 
         elif opcao == 99:
             return 0
