@@ -24,6 +24,37 @@ def ehCompleto(qtdeV, MATRIZ):
         return 0
 
 
+def ehRegular(qtdeV, MATRIZ):
+    ehRegularVerifAux = []
+    ehRegularVerif = []
+
+    # grau dos vértices
+    for i in range(qtdeV):
+        for j in range(qtdeV):
+            ehRegularVerifAux.append(MATRIZ[i][j])
+            if j == (qtdeV-1):
+                ehRegularVerif.append(sum(ehRegularVerifAux))
+                ehRegularVerifAux.clear()
+
+    print("Aux>", ehRegularVerifAux)
+    print("Grau dos Vértices>", ehRegularVerif)
+
+    ehRegularVerifMax = max(ehRegularVerif)
+    x = 1
+    v = 1 # verifRegular
+    for x in range(len(ehRegularVerif)):
+        if v == 0:
+            print("O grafo não é regular.")
+            return 0
+
+        if ehRegularVerif[x] == ehRegularVerif[x-1]:
+            v = 1
+        else:
+            v = 0
+
+        if x == (len(ehRegularVerif)-1) and v == 1:
+            print("O grafo é regular.")
+
 def main():
     print("=== Atividade de Implementação ==="
           +"\nAluno: João Vítor Silva Ferreira"
@@ -34,8 +65,10 @@ def main():
               +"\n1-Cadastrar Grafo"
               +"\n2-Principais Grafos de Coloração (Extra)"
               +"\n3-Printar Grafo"
-              +"\n4-Verificar se o Grafo é completo"
+              +"\n4-Verificar se o Grafo é completo (ehCompleto)"
               +"\n5-Remover Aresta"
+              +"\n6-Adicionar Aresta"
+              +"\n7-Verificar se o Grafo é regular (ehRegular)"
               +"\n99-Parar o Programa"
               +"\n: "))
 
@@ -80,6 +113,15 @@ def main():
             a1 = int(a1)
             a2 = int(a2)
             adjMATRIZ[a1][a2] = 0
+
+        elif opcao == 6:
+            a1, a2 = input("Aresta(xx xx): ").split()
+            a1 = int(a1)
+            a2 = int(a2)
+            adjMATRIZ[a1][a2] = 1
+
+        elif opcao == 7:
+            ehRegular(qtdeVertices, adjMATRIZ)
 
         elif opcao == 99:
             return 0
