@@ -12,12 +12,19 @@ Arquivo para ser executado: main.py
 
 ### Exemplo
 ```python3
+=== Atividade de Implementação ===
+Aluno: João Vítor Silva Ferreira
+Turma: N01
+
 === Opções ===
 1-Cadastrar Grafo
 2-Principais Grafos de Coloração (Extra)
 3-Printar Grafo
-4-Verificar se o Grafo é completo
-5-Remover Aresta
+4-Adjacentes (getAdjacentes)
+5-Verificar se o Grafo é completo (ehCompleto)
+6-Remover Aresta
+7-Adicionar Aresta
+8-Verificar se o Grafo é regular (ehRegular)
 99-Parar o Programa
 : 1
 Quantidade de Vértices> 2
