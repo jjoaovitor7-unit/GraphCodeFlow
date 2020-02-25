@@ -17,9 +17,10 @@ def getAdjacentes(qtdeV, MATRIZ):
                 linha.append("v" + str(j))
         mAdjsMATRIZ.append(linha)
 
+    y = 0
     for i in mAdjsMATRIZ:
-        print(i)
-
+        print("v" + str(y) + ": ", i)
+        y+=1
 
 def ehCompleto(qtdeV, MATRIZ):
     ehCompletoVerif = []
