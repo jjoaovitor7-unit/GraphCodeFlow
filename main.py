@@ -8,68 +8,6 @@ def printarAdjMATRIZ(qtdeV, MATRIZ):
         print()
 
 
-def getAdjacentes(qtdeV, MATRIZ):
-    mAdjsMATRIZ = []
-    for i in range(qtdeV):
-        linha = []
-        for j in range(qtdeV):
-            if MATRIZ[i][j] == 1:
-                linha.append("v" + str(j))
-        mAdjsMATRIZ.append(linha)
-
-    y = 0
-    for i in mAdjsMATRIZ:
-        print("v" + str(y) + ": ", i)
-        y+=1
-
-def ehCompleto(qtdeV, MATRIZ):
-    ehCompletoVerif = []
-    for i in range(qtdeV):
-        for j in range(qtdeV):
-            ehCompletoVerif.append(MATRIZ[i][j])
-
-    if sum(ehCompletoVerif) == (qtdeV ** 2):
-        print("O grafo é completo.")
-
-    elif sum(ehCompletoVerif) != (qtdeV ** 2):
-        print("O grafo não é completo.")
-
-    else:
-        return 0
-
-
-def ehRegular(qtdeV, MATRIZ):
-    ehRegularVerifAux = []
-    ehRegularVerif = []
-
-    # grau dos vértices
-    for i in range(qtdeV):
-        for j in range(qtdeV):
-            ehRegularVerifAux.append(MATRIZ[i][j])
-            if j == (qtdeV-1):
-                ehRegularVerif.append(sum(ehRegularVerifAux))
-                ehRegularVerifAux.clear()
-
-    print("Aux>", ehRegularVerifAux)
-    print("Grau dos Vértices>", ehRegularVerif)
-
-    ehRegularVerifMax = max(ehRegularVerif)
-    x = 1
-    v = 1 # verifRegular
-    for x in range(len(ehRegularVerif)):
-        if v == 0:
-            print("O grafo não é regular.")
-            return 0
-
-        if ehRegularVerif[x] == ehRegularVerif[x-1]:
-            v = 1
-        else:
-            v = 0
-
-        if x == (len(ehRegularVerif)-1) and v == 1:
-            print("O grafo é regular.")
-
-
 def main():
     print("=== Atividade de Implementação ==="
           +"\nAluno: João Vítor Silva Ferreira"
@@ -109,8 +47,8 @@ def main():
             print("Grafo cadastrado!")
 
         elif opcao == 2:
-            import extras
-            extras.coloracaoExemplos()
+            import src.extras
+            src.extras.coloracaoExemplos()
 
         elif opcao == 3:
             try:
@@ -120,13 +58,15 @@ def main():
 
         elif opcao == 4:
             try:
-                getAdjacentes(qtdeVertices, adjMATRIZ)
+                import src.getAdjacentes
+                src.getAdjacentes.getAdjacentes(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
         elif opcao == 5:
             try:
-                ehCompleto(qtdeVertices, adjMATRIZ)
+                import src.ehCompleto
+                src.ehCompleto.ehCompleto(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
@@ -144,7 +84,8 @@ def main():
 
         elif opcao == 8:
             try:
-                ehRegular(qtdeVertices, adjMATRIZ)
+                import src.ehRegular
+                src.ehRegular.ehRegular(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
     
