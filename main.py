@@ -1,13 +1,6 @@
 #-*- coding: utf-8 -*-
 #!/usr/bin/env python3
 
-def printarAdjMATRIZ(qtdeV, MATRIZ):
-    for i in range(qtdeV):
-        for j in range(qtdeV):
-            print(MATRIZ[i][j], end= ' ')
-        print()
-
-
 def main():
     print("=== Atividade de Implementação ==="
           +"\nAluno: João Vítor Silva Ferreira"
@@ -16,13 +9,13 @@ def main():
     while True:
         opcao = int(input("=== Opções ==="
               +"\n1-Cadastrar Grafo"
-              +"\n2-Principais Grafos de Coloração (Extra)"
-              +"\n3-Printar Grafo"
-              +"\n4-Adjacentes (getAdjacentes)"
-              +"\n5-Verificar se o Grafo é completo (ehCompleto)"
-              +"\n6-Remover Aresta"
-              +"\n7-Adicionar Aresta"
-              +"\n8-Verificar se o Grafo é regular (ehRegular)"
+              +"\n2-Printar Grafo"
+              +"\n3-Adicionar Aresta"
+              +"\n4-Remover Aresta"
+              +"\n5-Adjacentes (getAdjacentes)"
+              +"\n6-Verificar se o Grafo é completo (ehCompleto)"
+              +"\n7-Verificar se o Grafo é regular (ehRegular)"
+              +"\n8-Principais Grafos de Coloração (Extra)"
               +"\n99-Parar o Programa"
               +"\n: "))
 
@@ -30,6 +23,7 @@ def main():
             qtdeVertices = int(input("Quantidade de Vértices> "))
 
             if qtdeVertices <= 0:
+                print("A quantidade de vértices precisa ser maior do que 0.")
                 return 0
 
             adjMATRIZ = []
@@ -46,49 +40,50 @@ def main():
                 adjMATRIZ.append(linha)
             print("Grafo cadastrado!")
 
-        elif opcao == 2:
-            import src.extras
-            src.extras.coloracaoExemplos()
-
-        elif opcao == 3:
+        elif opcao == 2:            
             try:
-                printarAdjMATRIZ(qtdeVertices, adjMATRIZ)
+                import src.printarAdjMATRIZ as pMAdj
+                pMAdj.printarAdjMATRIZ(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
+        elif opcao == 3:            
+            a1, a2 = input("Aresta(xx xx): ").split()
+            a1 = int(a1)
+            a2 = int(a2)
+            adjMATRIZ[a1][a2] = 1
+
         elif opcao == 4:
+            a1, a2 = input("Aresta(xx xx): ").split()
+            a1 = int(a1)
+            a2 = int(a2)
+            adjMATRIZ[a1][a2] = 0
+
+        elif opcao == 5:
             try:
                 import src.getAdjacentes
                 src.getAdjacentes.getAdjacentes(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 5:
+        elif opcao == 6:
             try:
                 import src.ehCompleto
                 src.ehCompleto.ehCompleto(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 6:
-            a1, a2 = input("Aresta(xx xx): ").split()
-            a1 = int(a1)
-            a2 = int(a2)
-            adjMATRIZ[a1][a2] = 0
-
         elif opcao == 7:
-            a1, a2 = input("Aresta(xx xx): ").split()
-            a1 = int(a1)
-            a2 = int(a2)
-            adjMATRIZ[a1][a2] = 1
-
-        elif opcao == 8:
             try:
                 import src.ehRegular
                 src.ehRegular.ehRegular(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
-    
+
+        elif opcao == 8:
+            import src.extras
+            src.extras.coloracaoExemplos()
+
         elif opcao == 99:
             return 0
 
