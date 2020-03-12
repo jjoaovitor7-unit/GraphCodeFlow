@@ -1,5 +1,5 @@
-#-*- coding: utf-8 -*-
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 def main():
     print("=== Atividade de Implementação ==="
@@ -16,6 +16,7 @@ def main():
               +"\n6-Verificar se o Grafo é completo (ehCompleto)"
               +"\n7-Verificar se o Grafo é regular (ehRegular)"
               +"\n8-Principais Grafos de Coloração (Extra)"
+              +"\n9-Verificar se o Grafo é conexo (ehConexo)"
               +"\n99-Parar o Programa"
               +"\n: "))
 
@@ -83,6 +84,13 @@ def main():
         elif opcao == 8:
             import src.extras
             src.extras.coloracaoExemplos()
+
+        elif opcao == 9:
+            try:
+                import src.ehConexo
+                src.ehConexo.ehConexo(qtdeVertices, adjMATRIZ)
+            except UnboundLocalError:
+                print("É necessário cadastrar o Grafo primeiro.")
 
         elif opcao == 99:
             return 0

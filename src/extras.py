@@ -1,4 +1,4 @@
-#-*-coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 def coloracaoExemplos():
     print("C5 (Grafo Circular)     | X(G) = 3"

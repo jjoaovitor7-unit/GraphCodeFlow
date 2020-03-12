@@ -1,15 +1,15 @@
 #-*- coding: utf-8 -*-
 
 def getAdjacentes(qtdeV, MATRIZ):
-    mAdjsMATRIZ = []
+    aMATRIZ = []
     for i in range(qtdeV):
         linha = []
         for j in range(qtdeV):
             if MATRIZ[i][j] == 1:
                 linha.append("v" + str(j))
-        mAdjsMATRIZ.append(linha)
+        aMATRIZ.append(linha)
 
     y = 0
-    for i in mAdjsMATRIZ:
+    for i in aMATRIZ:
         print("v" + str(y) + ": ", i)
         y+=1
