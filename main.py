@@ -41,10 +41,10 @@ def main():
                 adjMATRIZ.append(linha)
             print("Grafo cadastrado!")
 
-        elif opcao == 2:            
+        elif opcao == 2:
             try:
-                import src.printarAdjMATRIZ as pMAdj
-                pMAdj.printarAdjMATRIZ(qtdeVertices, adjMATRIZ)
+                import src.printAMATRIZ as pMAdj
+                pMAdj.printAMATRIZ(qtdeVertices, adjMATRIZ)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
@@ -83,7 +83,7 @@ def main():
 
         elif opcao == 8:
             import src.extras
-            src.extras.coloracaoExemplos()
+            src.extras.exColoracao()
 
         elif opcao == 9:
             try:

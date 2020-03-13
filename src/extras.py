@@ -1,7 +1,9 @@
 #-*- coding: utf-8 -*-
 
-def coloracaoExemplos():
+def exColoracao():
+    """ Exemplos de Grafos de Coloração """
+
     print("C5 (Grafo Circular)     | X(G) = 3"
-        +"\nW5 (Grafo Roda (Wheel)) | X(G) = 3"
-        +"\nW6 (Grafo Roda (Wheel)) | X(G) = 4"
-        +"\nGrafo de Pertersen      | X(G) = 3")
+       +"\nW5 (Grafo Roda (Wheel)) | X(G) = 3"
+       +"\nW6 (Grafo Roda (Wheel)) | X(G) = 4"
+       +"\nGrafo de Pertersen      | X(G) = 3")
