@@ -1,16 +1,17 @@
 #-*- coding: utf-8 -*-
 
-def ehCompleto(qtdeV, MATRIZ):
-    ehCompletoVerif = []
-    for i in range(qtdeV):
-        for j in range(qtdeV):
-            ehCompletoVerif.append(MATRIZ[i][j])
+def ehCompleto(qtde_v, MATRIZ):
+    """Método ehCompleto p/ verificar se o Grafo é completo"""
 
-    if sum(ehCompletoVerif) == (qtdeV ** 2):
-        print("O grafo é completo.")
+    ehCompleto_ = []
+    for i in range(qtde_v):
+        for j in range(qtde_v):
+            ehCompleto_.append(MATRIZ[i][j])
 
-    elif sum(ehCompletoVerif) != (qtdeV ** 2):
-        print("O grafo não é completo.")
+    if sum(ehCompleto_) == (qtde_v ** 2) or sum(ehCompleto_) == ((qtde_v ** 2) - qtde):
+            print("O grafo é completo.")
+            return 1
 
     else:
+        print("O grafo não é completo.")
         return 0

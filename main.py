@@ -2,23 +2,12 @@
 #-*- coding: utf-8 -*-
 
 def main():
-    print("=== Atividade de Implementação ==="
-          +"\nAluno: João Vítor Silva Ferreira"
-          +"\nTurma: N01\n")
+    import src.extras as extras
+    extras.header()
 
     while True:
-        opcao = int(input("=== Opções ==="
-              +"\n1-Cadastrar Grafo"
-              +"\n2-Printar Grafo"
-              +"\n3-Adicionar Aresta"
-              +"\n4-Remover Aresta"
-              +"\n5-Adjacentes (getAdjacentes)"
-              +"\n6-Verificar se o Grafo é completo (ehCompleto)"
-              +"\n7-Verificar se o Grafo é regular (ehRegular)"
-              +"\n8-Principais Grafos de Coloração (Extra)"
-              +"\n9-Verificar se o Grafo é conexo (ehConexo)"
-              +"\n99-Parar o Programa"
-              +"\n: "))
+        extras.options()
+        opcao = int(input(": "))
 
         if opcao == 1:
             qtdeVertices = int(input("Quantidade de Vértices> "))
