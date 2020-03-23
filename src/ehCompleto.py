@@ -8,7 +8,7 @@ def ehCompleto(qtde_v, MATRIZ):
         for j in range(qtde_v):
             ehCompleto_.append(MATRIZ[i][j])
 
-    if sum(ehCompleto_) == (qtde_v ** 2) or sum(ehCompleto_) == ((qtde_v ** 2) - qtde):
+    if sum(ehCompleto_) == (qtde_v ** 2) or sum(ehCompleto_) == ((qtde_v ** 2) - qtde_v):
             print("O grafo é completo.")
             return 1
 

@@ -7,7 +7,10 @@ def main():
 
     while True:
         extras.options()
-        opcao = int(input(": "))
+        try:
+            opcao = int(input(": "))
+        except ValueError:
+            return print("Só é aceito números.")
 
         if opcao == 1:
             qtdeVertices = int(input("Quantidade de Vértices> "))
@@ -20,13 +23,15 @@ def main():
             for i in range(qtdeVertices):
                 linha = []
                 for j in range(qtdeVertices):
-                    adjEntrada = int(input("Adjacência (v" + str(i) + "v" + str(j) + ")(0>não|1>sim):"))
-                    if adjEntrada == 0:
+                    adj = int(input("Adjacência (v" + str(i) + "v" + str(j) + ")(0>não|1>sim):"))
+
+                    if adj == 0:
                         linha.append(0)
-                    elif adjEntrada == 1:
+                    elif adj == 1:
                         linha.append(1)
                     else:
-                        print("Apenas é aceito 0 ou 1!")
+                        return print("Apenas é aceito 0 ou 1!")
+
                 adjMATRIZ.append(linha)
             print("Grafo cadastrado!")
 
