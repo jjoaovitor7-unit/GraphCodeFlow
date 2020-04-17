@@ -4,8 +4,8 @@ def header():
 	"""Cabeçalho do Programa"""
 
 	print("=== Atividade de Implementação ==="
-        +"\nAluno: João Vítor Silva Ferreira"
-        +"\nTurma: N01\n")
+        +"\nGrupo:\nJoão Vítor Silva Ferreira\nAdiel Vieira Nascimento"
+        +"\n\nTurma:\nN01\n")
 
 
 def options():

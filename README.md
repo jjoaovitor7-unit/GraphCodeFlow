@@ -2,7 +2,9 @@
 > Atividade de Implementação da Disciplina **Teoria dos Grafos 2020.1**
 <br />![](https://badgen.net/github/last-commit/jjoaovitor7-unit/GraphCodeFlow)
 ![](https://badgen.net/github/license/jjoaovitor7-unit/GraphCodeFlow)
-### Aluno> João Vítor Silva Ferreira
+### Alunos>
+* Adiel Vieira Nascimento
+* João Vítor Silva Ferreira
 
 ```
 Linguagem: python3
@@ -13,8 +15,12 @@ Arquivo para ser executado: main.py
 ### Exemplo
 ```python3
 === Atividade de Implementação ===
-Aluno: João Vítor Silva Ferreira
-Turma: N01
+Grupo:
+Adiel Vieira Nascimento
+João Vítor Silva Ferreira
+
+Turma:
+N01
 
 === Opções ===
 1-Cadastrar Grafo
@@ -25,6 +31,7 @@ Turma: N01
 6-Verificar se o Grafo é completo (ehCompleto)
 7-Verificar se o Grafo é regular (ehRegular)
 8-Principais Grafos de Coloração (Extra)
+9-Verificar se o Grafo é conexo (ehConexo)
 99-Parar o Programa
 : 1
 Quantidade de Vértices> 2

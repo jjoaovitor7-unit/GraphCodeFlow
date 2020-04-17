@@ -8,22 +8,24 @@ def main():
     while True:
         extras.options()
         try:
-            opcao = int(input(": "))
+            option = int(input(": "))
         except ValueError:
             return print("Só é aceito números.")
 
-        if opcao == 1:
-            qtdeVertices = int(input("Quantidade de Vértices> "))
+        if option == 1:
+            qtde_v = int(input("Quantidade de Vértices> "))
 
-            if qtdeVertices <= 0:
+            if qtde_v <= 0:
                 print("A quantidade de vértices precisa ser maior do que 0.")
                 return 0
 
-            adjMATRIZ = []
-            for i in range(qtdeVertices):
-                linha = []
-                for j in range(qtdeVertices):
-                    adj = int(input("Adjacência (v" + str(i) + "v" + str(j) + ")(0>não|1>sim):"))
+            m_adj = []
+            for i in range(qtde_v):
+                linha = [] # vértice
+                for j in range(qtde_v):
+                    adj = int(input("Adjacência "
+                                    +"(v" + str(i) + "v" + str(j) + ")"
+                                    +"(0>não|1>sim):"))
 
                     if adj == 0:
                         linha.append(0)
@@ -32,57 +34,63 @@ def main():
                     else:
                         return print("Apenas é aceito 0 ou 1!")
 
-                adjMATRIZ.append(linha)
+                m_adj.append(linha)
             print("Grafo cadastrado!")
 
-        elif opcao == 2:
+        elif option == 2:
             try:
                 import src.printAMATRIZ as pMAdj
-                pMAdj.printAMATRIZ(qtdeVertices, adjMATRIZ)
+                pMAdj.printAMATRIZ(qtde_v, m_adj)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 3:            
-            a1, a2 = input("Aresta(xx xx): ").split()
-            a1 = int(a1)
-            a2 = int(a2)
-            adjMATRIZ[a1][a2] = 1
+        elif option == 3:
+            try:
+                a1, a2 = input("Aresta(xx xx): ").split()
+                a1 = int(a1)
+                a2 = int(a2)
+                m_adj[a1][a2] = 1
+            except UnboundLocalError:
+                print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 4:
-            a1, a2 = input("Aresta(xx xx): ").split()
-            a1 = int(a1)
-            a2 = int(a2)
-            adjMATRIZ[a1][a2] = 0
+        elif option == 4:
+            try:
+                a1, a2 = input("Aresta(xx xx): ").split()
+                a1 = int(a1)
+                a2 = int(a2)
+                m_adj[a1][a2] = 0
+            except UnboundLocalError:
+                print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 5:
+        elif option == 5:
             try:
                 import src.getAdjacentes
-                src.getAdjacentes.getAdjacentes(qtdeVertices, adjMATRIZ)
+                src.getAdjacentes.getAdjacentes(qtde_v, m_adj)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 6:
+        elif option == 6:
             try:
                 import src.ehCompleto
-                src.ehCompleto.ehCompleto(qtdeVertices, adjMATRIZ)
+                src.ehCompleto.ehCompleto(qtde_v, m_adj)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 7:
+        elif option == 7:
             try:
                 import src.ehRegular
-                src.ehRegular.ehRegular(qtdeVertices, adjMATRIZ)
+                src.ehRegular.ehRegular(qtde_v, m_adj)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
-        elif opcao == 8:
+        elif option == 8:
             import src.extras
             src.extras.exColoracao()
 
-        elif opcao == 9:
+        elif option == 9:
             try:
                 import src.ehConexo
-                src.ehConexo.ehConexo(qtdeVertices, adjMATRIZ)
+                src.ehConexo.ehConexo(qtde_v, m_adj)
             except UnboundLocalError:
                 print("É necessário cadastrar o Grafo primeiro.")
 
