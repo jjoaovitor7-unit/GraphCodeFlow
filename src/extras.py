@@ -31,3 +31,7 @@ def exColoracao():
        +"\nW5 (Grafo Roda (Wheel)) | X(G) = 3"
        +"\nW6 (Grafo Roda (Wheel)) | X(G) = 4"
        +"\nGrafo de Pertersen      | X(G) = 3")
+
+
+def CadastroGrafoError():
+    print("É necessário cadastrar o Grafo primeiro.")

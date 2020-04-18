@@ -42,7 +42,7 @@ def main():
                 import src.printAMATRIZ as pMAdj
                 pMAdj.printAMATRIZ(qtde_v, m_adj)
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
+                extras.CadastroGrafoError()
 
         elif option == 3:
             try:
@@ -51,7 +51,7 @@ def main():
                 a2 = int(a2)
                 m_adj[a1][a2] = 1
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
+                extras.CadastroGrafoError()
 
         elif option == 4:
             try:
@@ -60,28 +60,28 @@ def main():
                 a2 = int(a2)
                 m_adj[a1][a2] = 0
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
+                extras.CadastroGrafoError()
 
         elif option == 5:
             try:
                 import src.getAdjacentes
                 src.getAdjacentes.getAdjacentes(qtde_v, m_adj)
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
+                extras.CadastroGrafoError()
 
         elif option == 6:
             try:
                 import src.ehCompleto
                 src.ehCompleto.ehCompleto(qtde_v, m_adj)
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
+                extras.CadastroGrafoError()
 
         elif option == 7:
             try:
                 import src.ehRegular
                 src.ehRegular.ehRegular(qtde_v, m_adj)
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
+                extras.CadastroGrafoError()
 
         elif option == 8:
             import src.extras
@@ -92,9 +92,8 @@ def main():
                 import src.ehConexo
                 src.ehConexo.ehConexo(qtde_v, m_adj)
             except UnboundLocalError:
-                print("É necessário cadastrar o Grafo primeiro.")
-
-        elif opcao == 99:
+                extras.CadastroGrafoError()
+        elif option == 99:
             return 0
 
         else:
