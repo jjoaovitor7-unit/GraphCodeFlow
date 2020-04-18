@@ -33,5 +33,5 @@ def exColoracao():
        +"\nGrafo de Pertersen      | X(G) = 3")
 
 
-def CadastroGrafoError():
+def GrafoNotFoundError():
     print("É necessário cadastrar o Grafo primeiro.")
