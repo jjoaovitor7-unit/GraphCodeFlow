@@ -93,6 +93,15 @@ def main():
                 src.ehConexo.ehConexo(qtde_v, m_adj)
             except UnboundLocalError:
                 extras.GrafoNotFoundError()
+
+        elif option == 10:
+            try:
+                import src.BFS
+                src.BFS.BFS(qtde_v, m_adj, 0)
+
+            except UnboundLocalError:
+                extras.GrafoNotFoundError()
+
         elif option == 99:
             return 0
 

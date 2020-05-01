@@ -21,6 +21,7 @@ def options():
         +"\n7-Verificar se o Grafo é regular (ehRegular)"
         +"\n8-Principais Grafos de Coloração (Extra)"
         +"\n9-Verificar se o Grafo é conexo (ehConexo)"
+        +"\n10-Busca em Largura"
         +"\n99-Parar o Programa")
 
 
