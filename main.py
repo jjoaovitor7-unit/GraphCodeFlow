@@ -98,7 +98,6 @@ def main():
             try:
                 import src.BFS
                 src.BFS.BFS(qtde_v, m_adj, 0)
-
             except UnboundLocalError:
                 extras.GrafoNotFoundError()
 
