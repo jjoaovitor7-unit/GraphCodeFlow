@@ -1,19 +1,39 @@
-#-*- coding: utf-8 -*-
 
-def ehConexo(qtde_v, MATRIZ):
-    """Método ehConexo p/ verificar se o Grafo é conexo"""
 
-    for i in range(0, qtde_v):
-        linha = []
-        for j in range(0, qtde_v):
-            linha.append(MATRIZ[i][j])
+matriz = [[0,1,1,0],[1,0,0,1],[1,0,0,1],[0,1,1,0]]
 
-        if j == (qtde_v-1):
-            if sum(linha) >= 1:
-                linha.clear()
-            else:
-                linha.clear()
-                print("O grafo não é conexo.")
-                return 0
+def busca_profundidade(matriz, vertice):
+    pilha = []
+    visitados = []
+    resultado = []
+    for i in range(len(matriz)):
+        visitados.append(False)
+    visitados[vertice] = True
+    #F T F F
+    pilha.append(vertice)
+    contador = 0
 
-        return print("O grafo é conexo.")
+    while len(pilha) != 0: 
+        topo = pilha[len(pilha)-1]
+        while  contador != len(matriz[i]):
+            if (visitados[contador] == False) and matriz[topo][contador] != 0:
+                #T T T T 
+                visitados[contador] = True
+                pilha.append(contador)
+            contador+= 1
+        
+        contador = 0
+        resultado.append(pilha.pop())
+    return resultado
+    
+def ehConexo(matriz):
+    lista = busca_profundidade(matriz,0)
+    if len(matriz) == len(lista):
+       return True
+    else:
+       return False
+    
+
+if __name__ == "__main__":
+    busca_profundidade(matriz,0)    
+    print(ehConexo(matriz))
